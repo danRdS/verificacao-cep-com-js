@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="website icon" href="assets/images/unnamed.webp">
+    <title>Auto preenchimento de Endereço pelo CEP</title>
+</head>
+<body>
+    <main>
+
+        <fieldset>
+            <legend>ENDEREÇO</legend>
+            <form action="" id="form">
+                <label id="lab-cep" for="cep">CEP:</label>
+                <input type="text" name="cep" id="cep" placeholder="CEP" onblur="validarCep(this.value)" maxlength="9">
+                <label id="lab-bairro" for="bairro">Bairro:</label>
+                <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+                <label id="lab-localidade" for="localidade">Localidade:</label>
+                <input type="text" name="localidade" id="localidade" placeholder="Localidade">
+                <label id="lab-logradouro" for="logradouro">Logradouro:</label>
+                <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
+                <label id="lab-uf" for="uf">UF:</label>
+                <input type="text" name="uf" id="uf" placeholder="UF">
+            </form>
+        </fieldset>
+
+        <dialog>
+            <span></span>
+            <button type="button" onclick="fecharDialog()">Ok</button>
+        </dialog>
+        
+    </main>
+
+    <div id="loader" class="ocultar-loader">
+        <section class="spinner"></section>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

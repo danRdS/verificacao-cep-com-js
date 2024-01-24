@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #181818;
+    min-height: 100vh;
+    color: #e7e7e7;
+}
+
+body:has(.visivel) {
+    overflow: hidden;
+}
+
+main {
+    padding: 1rem;
+}
+
+fieldset {
+    border-radius: 5px;
+    border: 2px solid #a9a9a9;
+    padding: .7rem 1rem 2rem;
+}
+
+legend {
+    font-weight: 500;
+    font-size: clamp(14px, 4vw, 20px);
+    padding-inline: .5rem;
+    margin-inline: .5rem;
+    background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+label {
+    display: inline-block;
+    margin: 1rem 0 .3rem;
+}
+
+input {
+    display: block;
+    background-color: rgb(43, 43, 74);
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: .3rem;
+    color: #e7e7e7;
+}
+
+#loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.ocultar-loader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid;
+    border-color: #f14 #ffd700 #0f9 #09f;
+    border-radius: 50%;
+    animation: rotate .7s linear infinite;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg);}
+}
+
+dialog {
+    padding: 1rem;
+    border: none;
+    border-radius: 3px;
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 250px;
+    background-color: #4e435c;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+dialog span {
+    color: #e7e7e7;
+    display: block;
+    margin: 2px 0 2rem;
+}
+
+dialog button {
+    display: block;
+    margin-left: auto;
+    padding: .2rem 1rem;
+    border-radius: 2px;
+    border: none;
+    color: #e7e7e7;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .9);
+    background: linear-gradient(to right bottom, #09f, #330867);
+    cursor: pointer;
+    transition: filter .3s ease-in-out;
+}
+
+dialog button:hover {
+    filter: brightness(1.2);
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(2px);
+}
+
+.visivel {
+    opacity: 0;
+    animation: animation .3s ease-in-out 1 forwards;
+}
+
+@keyframes animation {
+    to { transform: translateY(1rem); opacity: 1;}
+}
